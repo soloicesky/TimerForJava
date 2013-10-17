@@ -1,14 +1,29 @@
 package com.soloicesky.timer;
 
+/**
+ * 
+ * @filname Timer.java
+ * @description A Usefull timer lib for java.
+ * @author soloicesky
+ * @data 2013-10-17		@time ÏÂÎç2:54:50
+ */
+
 public class Timer {
 	private long timeOutMs = 0;
 	private boolean bTimeOut = false;
 
+	/**
+	 * default constructor
+	 */
 	public Timer() {
 		this.timeOutMs = 0;
 		this.bTimeOut = false;
 	}
 
+	/**
+	 * 
+	 * @param timeOutMs initial the time out millisecond time
+	 */
 	public Timer(long timeOutMs) {
 		this.timeOutMs = timeOutMs;
 		this.bTimeOut = false;
@@ -26,6 +41,9 @@ public class Timer {
 		bTimeOut = true;
 	}
 
+	/**
+	 * start the timer
+	 */
 	public void start() {
 		final Timer tm = this;
 
@@ -48,7 +66,11 @@ public class Timer {
 		
 		thread.start();
 	}
-
+	
+	/**
+	 * to check if the timer is out of time
+	 * @return true - already time out false- not time out yet
+	 */
 	public boolean timeOut() {
 		return bTimeOut;
 	}
